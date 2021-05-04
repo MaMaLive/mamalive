@@ -1,6 +1,25 @@
 export default function Home() {
   return (
     <>
+        <div dangerouslySetInnerHTML={{ __html: `<script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+                          <script type="text/javascript">
+                              MRP.insert({
+                              'url':'https://centova2.euroti.com.br:20056/stream?type=http&nocache=24',
+                              'codec':'mp3',
+                              'volume':51,
+                              'autoplay':true,
+                              'jsevents':true,
+                              'buffering':0,
+                              'title':'MAMALIVE',
+                              'welcome':'Bem vindo',
+                              'wmode':'transparent',
+                              'skin':'e76',
+                              'width':130,
+                              'height':75
+                              });
+                          </script>
+                      `
+                      }} />
       <h1>Hello World teste5</h1>
       <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
       <div style={{width: '100%', paddingBottom: '56.25%', position: 'relative'}}>
