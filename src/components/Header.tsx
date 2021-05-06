@@ -1,4 +1,4 @@
-import {Flex, Image, Text} from '@chakra-ui/react';
+import {Flex, Image, Text, Box} from '@chakra-ui/react';
 
 export function Header() {
     return (
@@ -50,7 +50,7 @@ export function Header() {
 
               </Flex>
 
-            <div dangerouslySetInnerHTML={{ __html: `<script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+            <Box dangerouslySetInnerHTML={{ __html: `<script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
                 <script type="text/javascript">
                     MRP.insert({
                     'url':'https://centova2.euroti.com.br:20056/stream?type=http&nocache=24',

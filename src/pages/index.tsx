@@ -4,6 +4,7 @@ import { Participate } from '../components/Participate'
 import { Carousel } from '../components/Carousel'
 import { Banner } from '../components/Banner'
 import { Contact } from '../components/Contact'
+import { Footer } from '../components/Footer'
 export default function Home() {
   return (
     <>
@@ -15,6 +16,7 @@ export default function Home() {
       <Carousel/>
       <Banner/>
       <Contact/>
+      <Footer/>
     </>
   )
 }

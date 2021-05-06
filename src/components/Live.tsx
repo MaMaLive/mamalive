@@ -53,7 +53,7 @@ export function Live() {
 
                 </Flex>
 
-                <div style={{width: '768px', height: '432px', position: 'relative'}}>
+                <Box style={{width: '768px', height: '432px', position: 'relative'}}>
                     <iframe
                         style={{position: 'absolute', width: '100%', height: '100%', border: 'none'}}
                         src="https://playerv.srvstm.com/video/mamalive/2/true/false/VlROU2RGWnFXWFZqTTBveVl6TlNkRXh0VG5aaVVUMDkrNQ==/16:9/"
@@ -61,7 +61,7 @@ export function Live() {
                     >
 
                     </iframe>
-                </div>
+                </Box>
 
             </Flex>
 

@@ -1,15 +1,15 @@
 import React from 'react';
-import {Flex, Image, Text, Heading} from '@chakra-ui/react';
+import {Flex, Image, Text, Heading, Box} from '@chakra-ui/react';
 import { CarouselProvider, Slider, Slide} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export function Carousel(){
     return (
-      <div
+      <Box
         style={{backgroundColor:'#e6e6e6'}}
       >
 
-        <div
+        <Box
           style={{width:'100%', maxWidth:'1140px', margin: '0 auto'}}
         >
 
@@ -70,7 +70,7 @@ export function Carousel(){
                       h="100%"
                       objectFit="contain"
                       src="/images/Avent.jpg"
-                      alt="MaMa Live" 
+                      alt="Aventuras &amp; Aventureiros" 
                     />
                   </Flex>
                 </Slide>
@@ -114,7 +114,7 @@ export function Carousel(){
                       h="100%"
                       objectFit="contain"
                       src="/images/PodserLegal.jpg"
-                      alt="MaMa Live" 
+                      alt="PodSerLegal" 
                     />
                   </Flex>
                 </Slide>
@@ -158,7 +158,7 @@ export function Carousel(){
                       h="100%"
                       objectFit="contain"
                       src="/images/EducArt.jpg"
-                      alt="MaMa Live" 
+                      alt="Educação e Arte" 
                     />
                   </Flex>
 
@@ -204,7 +204,7 @@ export function Carousel(){
                       h="100%"
                       objectFit="contain"
                       src="/images/H7N.jpg"
-                      alt="MaMa Live" 
+                      alt="Hora 7 News" 
                     />
                   </Flex>
                   
@@ -253,15 +253,15 @@ export function Carousel(){
                       h="100%"
                       objectFit="contain"
                       src="/images/CidaEmFoco.jpg"
-                      alt="MaMa Live" 
+                      alt="Cidade em Foco" 
                     />
                   </Flex>
                   
                 </Slide>
               </Slider>
             </CarouselProvider>
-        </div>
-      </div>
+        </Box>
+      </Box>
        
     );
 }

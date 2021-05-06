@@ -1,7 +1,7 @@
-import {Flex, Heading} from '@chakra-ui/react';
+import {Flex, Heading, Box} from '@chakra-ui/react';
 export function Banner() {
     return (
-        <div
+        <Box
             style={{backgroundColor: '#282750'}}
         >
 
@@ -21,6 +21,6 @@ export function Banner() {
                     TOTALMENTE DIGITAL E MULTIPLATAFORMA
                 </Heading>
             </Flex>
-        </div>
+        </Box>
     )
 }

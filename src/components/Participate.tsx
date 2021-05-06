@@ -38,14 +38,10 @@ export function Participate() {
                     placeholder='Envie-nos uma mensagem'
                     _placeholder={{color: 'gray.500'}}
 
-                >
-
-                </Textarea>
+                />
                 <Button
                     w='8rem'
-                    background='yellow.500'
-                    color='white'
-
+                    colorScheme='orange'
                 >
                     Enviar
                 </Button>
