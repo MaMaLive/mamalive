@@ -12,7 +12,7 @@ export function Contact() {
             bgSize='100% 100%'
         >
             <Box
-                pt='12rem'
+                pt='8rem'
             >
 
                 <Flex

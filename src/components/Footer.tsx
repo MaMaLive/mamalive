@@ -62,6 +62,7 @@ export function Footer() {
                     <Icon
                         as={SiNextDotJs}
                         color="white"
+                        fontSize='25px' 
                     />
                 </Text>
             </Flex>
