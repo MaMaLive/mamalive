@@ -56,7 +56,7 @@ export function Header() {
                     'url':'https://centova2.euroti.com.br:20056/stream?type=http&nocache=24',
                     'codec':'mp3',
                     'volume':51,
-                    'autoplay':false,
+                    'autoplay':true,
                     'jsevents':true,
                     'buffering':0,
                     'title':'MAMALIVE',
