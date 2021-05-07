@@ -6,6 +6,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 export function Carousel(){
     return (
       <Box
+        id='programation'
         style={{backgroundColor:'#e6e6e6'}}
       >
 
@@ -21,7 +22,7 @@ export function Carousel(){
               interval={5000}
               isPlaying
             > 
-              <Slider style={{ maxHeight:'31rem'}}>
+              <Slider style={{ maxHeight:'31rem', cursor: 'grab'}}>
                 <Slide index={0}>
                   <Flex
                     mt='4.5rem'

@@ -1,4 +1,4 @@
-import {Flex, Text, Input, Textarea, Button, Icon} from '@chakra-ui/react';
+import {Flex, Text, Input, Textarea, Button, Icon, Box, Link} from '@chakra-ui/react';
 import {RiFacebookCircleFill, RiTwitterFill, RiInstagramLine, RiYoutubeFill} from 'react-icons/ri'
 export function Participate() {
     return (
@@ -46,32 +46,63 @@ export function Participate() {
                     Enviar
                 </Button>
             </Flex>
-            <Flex
+            <Box
             >
-                <Icon
-                  as={RiFacebookCircleFill}
-                  fontSize='60px' 
-                  color="#546bb0"
-                  mr='3rem'
-                />
-                <Icon
-                  as={RiTwitterFill}
-                  fontSize='60px' 
-                  color="#546bb0"
-                  mr='3rem'
-                />
-                <Icon
-                  as={RiInstagramLine}
-                  fontSize='60px' 
-                  color="#546bb0"
-                  mr='3rem'
-                />
-                <Icon
-                  as={RiYoutubeFill}
-                  fontSize='60px' 
-                  color="#546bb0"
-                />
-            </Flex>
+                <Link
+                    href="https://www.facebook.com/MaMaLiveWebTv/"
+                    isExternal
+                    _focus={{border:'none'}}
+                >
+
+                        <Icon
+                        as={RiFacebookCircleFill}
+                        fontSize='60px' 
+                        color="#546bb0"
+                        mr='3rem'
+                        />
+                </Link>
+
+                <Link
+                        href="https://twitter.com/MaMaLiveWeb"
+                        isExternal
+                        _focus={{border:'none'}}
+                >
+
+                    <Icon
+                    as={RiTwitterFill}
+                    fontSize='60px' 
+                    color="#546bb0"
+                    mr='3rem'
+                    />
+                </Link>
+
+                <Link
+                    href="https://www.instagram.com/mamalivewebtv/"
+                    isExternal
+                    _focus={{border:'none'}}
+                >
+
+                    <Icon
+                    as={RiInstagramLine}
+                    fontSize='60px' 
+                    color="#546bb0"
+                    mr='3rem'
+                    />
+                </Link>
+
+                <Link
+                    href="https://www.youtube.com/channel/UCvoTtWCFNCvTKh88NewldQg"
+                    isExternal
+                    _focus={{border:'none'}}
+                >
+
+                    <Icon
+                    as={RiYoutubeFill}
+                    fontSize='60px' 
+                    color="#546bb0"
+                    />
+                </Link>
+            </Box>
         </Flex>
     )
 }

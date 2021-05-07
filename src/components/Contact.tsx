@@ -10,6 +10,7 @@ export function Contact() {
             bgPosition="center"
             bgRepeat="no-repeat"
             bgSize='100% 100%'
+            id='contact'
         >
             <Box
                 pt='8rem'

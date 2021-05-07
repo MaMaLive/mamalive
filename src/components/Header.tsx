@@ -1,4 +1,5 @@
-import {Flex, Image, Text, Box} from '@chakra-ui/react';
+import {Flex, Image, Text, Box, Link} from '@chakra-ui/react';
+import {Link as LinkS} from 'react-scroll'
 
 export function Header() {
     return (
@@ -27,26 +28,34 @@ export function Header() {
                     src="/images/Logo.png"
                     alt="MaMa Live" />
 
-                <Text
-                    fontWeight="bold"
-                    color="gray.900"
-                    mr='4rem'
-                >
-                    Inicio
-                </Text>
-                <Text
-                    fontWeight="bold"
-                    color="gray.900"
-                    mr='4rem'
-                >
-                    Programação
-                </Text>
-                <Text
-                    fontWeight="bold"
-                    color="gray.900"
-                >
-                    Contato
-                </Text>
+                <Link as={LinkS} smooth={true} to='live' _focus={{border:'none'}}>
+                    <Text
+                        fontWeight="bold"
+                        color="gray.900"
+                        mr='4rem'
+                    >
+                        Inicio
+                    </Text>
+                </Link>
+
+                <Link as={LinkS} smooth={true} to='programation' _focus={{border:'none'}}>
+                    <Text
+                        fontWeight="bold"
+                        color="gray.900"
+                        mr='4rem'
+                    >
+                        Programação
+                    </Text>
+                </Link>
+
+                <Link as={LinkS} smooth={true} to='contact' _focus={{border:'none'}}>
+                    <Text
+                        fontWeight="bold"
+                        color="gray.900"
+                    >
+                        Contato
+                    </Text>
+                </Link>
 
               </Flex>
 

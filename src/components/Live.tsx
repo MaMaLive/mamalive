@@ -10,6 +10,7 @@ export function Live() {
             bgPosition="center"
             bgRepeat="no-repeat"
             bgSize='100% 130%'
+            id='live'
         >
             <Flex
                 maxWidth={1140}
