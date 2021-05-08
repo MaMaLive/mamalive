@@ -55,6 +55,7 @@ export function Participate() {
                 >
                     Participe de nossa programação.
                 </Text>
+                <input type="hidden" name="form-name" value="participate" />
                 <Input
                     w='30rem'
                     color='gray.900'
@@ -66,7 +67,6 @@ export function Participate() {
 
                 >
 
-                {/* <Input type="hidden" name="participate" value="participate" /> */}
 
                 </Input>
                 <Textarea
