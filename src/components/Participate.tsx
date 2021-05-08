@@ -45,7 +45,7 @@ export function Participate() {
             <Flex 
                 as='form'
                 flexDirection='column'
-                onSubmit={handleSubmit(handleParticipate)}
+                // onSubmit={handleSubmit(handleParticipate)}
                 name='participate'
                 data-netlify="true"
                 method='post'
