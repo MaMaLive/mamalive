@@ -66,7 +66,7 @@ export function Participate() {
 
                 >
 
-                <input type="hidden" name="participate" value="participate" />
+                {/* <Input type="hidden" name="participate" value="participate" /> */}
 
                 </Input>
                 <Textarea
