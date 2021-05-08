@@ -4,6 +4,7 @@ export function WhatsApp() {
     return (
         <Flex
         position='fixed'
+        zIndex='10'
         ml='2rem'
         top='90%'
             >
