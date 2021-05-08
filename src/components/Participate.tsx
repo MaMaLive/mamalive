@@ -48,14 +48,14 @@ export function Participate() {
                 onSubmit={handleSubmit(handleParticipate)}
                 name='participate'
                 data-netlify="true"
-                data-netlify-honeypot="bot-field"
+                method='post'
             >
+                <input type="hidden" name="form-name" value="participate" />
                 <Text
                     mb='1rem'
                 >
                     Participe de nossa programação.
                 </Text>
-                <input type="hidden" name="form-name" value="participate" />
                 <Input
                     w='30rem'
                     color='gray.900'
