@@ -46,8 +46,9 @@ export function Participate() {
                 as='form'
                 flexDirection='column'
                 onSubmit={handleSubmit(handleParticipate)}
-                data-netlify="true"
                 name='participate'
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
             >
                 <Text
                     mb='1rem'
@@ -64,6 +65,8 @@ export function Participate() {
                     {...register('name')}
 
                 >
+
+                <input type="hidden" name="participate" value="participate" />
 
                 </Input>
                 <Textarea
