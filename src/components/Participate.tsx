@@ -45,12 +45,9 @@ export function Participate() {
             <Flex 
                 as='form'
                 flexDirection='column'
-                // onSubmit={handleSubmit(handleParticipate)}
+                onSubmit={handleSubmit(handleParticipate)}
                 name='participate'
-                data-netlify="true"
-                method='post'
             >
-                <input type="hidden" name="form-name" value="participate" />
                 <Text
                     mb='1rem'
                 >
@@ -74,6 +71,7 @@ export function Participate() {
                     w='30rem'
                     color='gray.900'
                     background='gray.50'
+                    name='message'
                     placeholder='Envie-nos uma mensagem'
                     _placeholder={{color: 'gray.500'}}
                     error={errors.message}
