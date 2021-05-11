@@ -6,9 +6,12 @@ import { Banner } from '../components/Banner'
 import { Contact } from '../components/Contact'
 import { Footer } from '../components/Footer'
 import { WhatsApp } from '../components/WhatsApp'
+import { Header } from '../components/Header'
+
 export default function Home() {
   return (
     <> 
+      <Header/>
       <WhatsApp/>
       <Head>
         <title>MaMa Live | A sua WebRádio de Campo Mourão - MaMa Live</title> 

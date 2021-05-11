@@ -84,6 +84,8 @@ export function Contact() {
                                 color="black"
                                 error={errors.nameContact}
                                 {...register('nameContact')}
+                                variant='flushed'
+
                             />
 {/*                             <NumberInput
                                 min={0}
@@ -98,6 +100,8 @@ export function Contact() {
                                     color="black"
                                     error={errors.phone}
                                     {...register('phone')}
+                                    variant='flushed'
+
                                     />
 
                         </SimpleGrid>
@@ -110,6 +114,7 @@ export function Contact() {
                                 color="black"
                                 error={errors.email}
                                 {...register('email')}
+                                variant='flushed'
                                 />
                             <Input 
                                 name="city" 
@@ -117,6 +122,8 @@ export function Contact() {
                                 color="black"
                                 error={errors.city}
                                 {...register('city')}
+                                variant='flushed'
+
                                 />
                         </SimpleGrid>
 
@@ -129,6 +136,7 @@ export function Contact() {
                             _placeholder={{color: 'gray.500'}}
                             error={errors.messageContact}
                             {...register('messageContact')}
+
 
                         />
                     </VStack>
