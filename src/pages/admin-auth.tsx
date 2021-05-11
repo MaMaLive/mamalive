@@ -1,10 +1,23 @@
 import Head from 'next/head'
-
-import {Flex, Button, Image, Stack} from '@chakra-ui/react';
+import {signIn, useSession} from 'next-auth/client'
+import Router from 'next/router'
+import {Flex, Button, Image, Stack, Text, Icon} from '@chakra-ui/react';
 import {Input} from '../components/Forms/Input'
+import {FaGithub} from 'react-icons/fa'
+
 
 export default function AdminAuth() {
-    return (
+    const[session] = useSession()
+
+    if(session){
+        Router.push(`/dashboard`)
+    }
+
+    return session ? (
+        <>
+            <Text>Você já está logado</Text>
+        </>
+    ) : (
         <>
             <Head>
             <title>MaMa Live | ADMIN</title> 
@@ -62,6 +75,23 @@ export default function AdminAuth() {
                         colorScheme='blue'
                     >
                         Entrar
+                    </Button>
+
+                    <Button
+                        type='button'
+                        onClick={() =>signIn('github', { callbackUrl: 'http://localhost:3000/dashboard' })}
+                        mt='6'
+                        w='100%'
+                        colorScheme='red' 
+                    >
+                        <Icon
+                            as={FaGithub}
+                        />
+                        <Text
+                            ml='2'
+                        >
+                            Sign in with GitHub
+                        </Text>
                     </Button>
 
                 </Flex>
