@@ -17,14 +17,14 @@ export default class MyDocument extends Document {
                     <meta property="og:title" content="MaMa Live | A sua WebRádio de Campo Mourão - MaMa Live"/>
                     <meta property="og:description" content="MaMa Live é uma webrádio de Campo Mourão, com programas diários, sempre com conteúdos atualizados da nossa cidade, do Brasil e do mundo.
                     "/>
-                    <meta property="og:image" content="/images/Logo.png"/>
+                    <meta property="og:image" content="https://mamalive.com.br/images/Logo.png"/>
 
                     <meta property="twitter:card" content="summary_large_image"/>
                     <meta property="twitter:url" content="https://mamalive.com.br/"/>
                     <meta property="twitter:title" content="MaMa Live | A sua WebRádio de Campo Mourão - MaMa Live"/>
                     <meta property="twitter:description" content="MaMa Live é uma webrádio de Campo Mourão, com programas diários, sempre com conteúdos atualizados da nossa cidade, do Brasil e do mundo.
                     "/>
-                    <meta property="twitter:image" content="/images/Logo.png"></meta>
+                    <meta property="twitter:image" content="https://mamalive.com.br/images/Logo.png"></meta>
 
                 </Head>
                 <body>
