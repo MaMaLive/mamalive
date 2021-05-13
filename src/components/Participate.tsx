@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
+
 import {Flex, Text, Button, Icon, Box, Link} from '@chakra-ui/react';
 import {Input} from '../components/Forms/Input'
 import {Textarea} from '../components/Forms/TextArea'
@@ -25,10 +26,19 @@ export function Participate() {
 
     const {errors} = formState
 
-    const handleParticipate: SubmitHandler<ParticipateFormData> = async (data) => {
+    const handleParticipate: SubmitHandler<ParticipateFormData> = async (data, event) => {
+        event.preventDefault()
         await new Promise(resolve => setTimeout(resolve, 2000))
         console.log(data)
 
+        try {
+            
+
+            
+        } catch (error) {
+            console.log(error)
+        }
+       
         
     }
 
@@ -71,12 +81,10 @@ export function Participate() {
                     w='30rem'
                     color='gray.900'
                     background='gray.50'
-                    name='message'
                     placeholder='Envie-nos uma mensagem'
                     _placeholder={{color: 'gray.500'}}
                     error={errors.message}
                     {...register('message')}
-
 
                 />
                 <Button
