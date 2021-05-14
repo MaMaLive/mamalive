@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
+import axios from 'axios'
 
 import {Flex, Text, Button, Icon, Box, Link} from '@chakra-ui/react';
 import {Input} from '../components/Forms/Input'
@@ -15,6 +17,8 @@ type ParticipateFormData = {
 
 export function Participate() {
 
+    const [messagesent, setMessagesent] = useState('nulo')
+
     const participateSchema = yup.object().shape({
         name: yup.string().required('Por favor escreva seu nome'),
         message: yup.string().required('Por favor escreva uma mensagem')
@@ -26,14 +30,26 @@ export function Participate() {
 
     const {errors} = formState
 
-    const handleParticipate: SubmitHandler<ParticipateFormData> = async (data, event) => {
-        event.preventDefault()
+    const handleParticipate: SubmitHandler<ParticipateFormData> = async (data/* , event */) => {
+        // event.preventDefault()
         await new Promise(resolve => setTimeout(resolve, 2000))
-        console.log(data)
+        // console.log(data)
 
         try {
             
-
+            axios.post('https://sheet.best/api/sheets/242c88f2-db88-49e3-9bfd-55c2a51a59ff', {
+                name: data.name,
+                message: data.message
+            }).then(response => {
+                if(response.status !== 200) {
+                    setMessagesent('erro')
+                    console.log(response)
+                }
+                if(response.status === 200) {
+                    setMessagesent('enviado')
+                }
+            })
+            
             
         } catch (error) {
             console.log(error)
@@ -68,6 +84,7 @@ export function Participate() {
                     color='gray.900'
                     background='gray.50'
                     placeholder='Nome'
+                    name='name'
                     _placeholder={{color: 'gray.500'}}
                     error={errors.name}
                     {...register('name')}
@@ -81,12 +98,24 @@ export function Participate() {
                     w='30rem'
                     color='gray.900'
                     background='gray.50'
+                    name='message'
                     placeholder='Envie-nos uma mensagem'
                     _placeholder={{color: 'gray.500'}}
                     error={errors.message}
                     {...register('message')}
 
                 />
+
+                {messagesent === 'enviado' ? 
+                    <Text>
+                        Mensagem enviada com sucesso!
+                    </Text>
+                 : messagesent === 'erro' ? 
+                     <Text>
+                        Mensagem não enviada, por favor tente novamente mais tarde.
+                    </Text>
+                  : <></>}
+
                 <Button
                     mt='2rem'
                     w='8rem'

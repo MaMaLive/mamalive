@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
-import {Flex, Box, Image, VStack, SimpleGrid, Button, NumberInput, NumberInputField} from '@chakra-ui/react';
+import axios from 'axios'
+
+import {Flex, Box, Image, VStack, SimpleGrid, Button, Text, NumberInput, NumberInputField} from '@chakra-ui/react';
 import {Input} from '../components/Forms/Input'
 import {Textarea} from '../components/Forms/TextArea'
 
@@ -15,6 +18,8 @@ type ContactFormData = {
 
 
 export function Contact() {
+
+    const [messagesent, setMessagesent] = useState('nulo')
 
     const participateSchema = yup.object().shape({
         nameContact: yup.string().required('Por favor escreva seu nome'),
@@ -37,6 +42,30 @@ export function Contact() {
     const handleParticipate: SubmitHandler<ContactFormData> = async (data) => {
         await new Promise(resolve => setTimeout(resolve, 2000))
         console.log(data)
+
+        try {
+            
+            axios.post('https://sheet.best/api/sheets/044325c5-de99-480f-af49-78aeb1eb4b06', {
+                name: data.nameContact,
+                message: data.messageContact,
+                email: data.email,
+                phone: data.phone,
+                city: data.city,
+
+            }).then(response => {
+                if(response.status !== 200) {
+                    setMessagesent('erro')
+                    console.log(response)
+                }
+                if(response.status === 200) {
+                    setMessagesent('enviado')
+                }
+            })
+            
+            
+        } catch (error) {
+            console.log(error)
+        }
 
         
     }
@@ -139,6 +168,16 @@ export function Contact() {
 
 
                         />
+                        {messagesent === 'enviado' ? 
+                            <Text>
+                                Agradecemos seu contato!
+                            </Text>
+                        : messagesent === 'erro' ? 
+                            <Text>
+                                Não conseguimos pegar seu contato, por favor tente novamente mais tarde.
+                            </Text>
+                        : <></>
+                        }
                     </VStack>
                      <Button 
                         m='2rem 0 4rem 0' 
