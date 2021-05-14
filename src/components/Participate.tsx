@@ -31,9 +31,11 @@ export function Participate() {
     const {errors} = formState
 
     const handleParticipate: SubmitHandler<ParticipateFormData> = async (data/* , event */) => {
+        setMessagesent('nulo')
         // event.preventDefault()
         await new Promise(resolve => setTimeout(resolve, 2000))
         // console.log(data)
+
 
         try {
             
