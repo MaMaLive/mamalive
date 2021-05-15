@@ -83,6 +83,7 @@ export function Participate() {
                 flexDirection='column'
                 onSubmit={handleSubmit(handleParticipate)}
                 name='participate'
+                w={isWiderVersion === true ? '50%' : '100%'}
             >
                 <Text
                     mb='1rem'
@@ -128,6 +129,8 @@ export function Participate() {
 
                 <Button
                     mt='2rem'
+                    mx={isWiderVersion === true ? '0' : 'auto'}
+                    mb={isWiderVersion === true ? '0' : '3rem'}
                     w='8rem'
                     colorScheme='orange'
                     type='submit'
@@ -137,6 +140,8 @@ export function Participate() {
                 </Button>
             </Flex>
             <Box
+                w={isWiderVersion === true ? '50%' : '100%'}
+                align='center'
             >
                 <Link
                     href="https://www.facebook.com/MaMaLiveWebTv/"
@@ -146,9 +151,9 @@ export function Participate() {
 
                         <Icon
                         as={RiFacebookCircleFill}
-                        fontSize='60px' 
+                        fontSize={[ '50px' ,'60px' ]}
                         color="#546bb0"
-                        mr='3rem'
+                        mr={isWiderVersion === true ? '3rem' : '1rem'}
                         />
                 </Link>
 
@@ -160,9 +165,9 @@ export function Participate() {
 
                     <Icon
                     as={RiTwitterFill}
-                    fontSize='60px' 
+                    fontSize={[ '50px' ,'60px' ]}
                     color="#546bb0"
-                    mr='3rem'
+                    mr={isWiderVersion === true ? '3rem' : '1rem'}
                     />
                 </Link>
 
@@ -174,9 +179,9 @@ export function Participate() {
 
                     <Icon
                     as={RiInstagramLine}
-                    fontSize='60px' 
+                    fontSize={[ '50px' ,'60px' ]}
                     color="#546bb0"
-                    mr='3rem'
+                    mr={isWiderVersion === true ? '3rem' : '1rem'}
                     />
                 </Link>
 
@@ -188,7 +193,7 @@ export function Participate() {
 
                     <Icon
                     as={RiYoutubeFill}
-                    fontSize='60px' 
+                    fontSize={[ '50px' ,'60px' ]}
                     color="#546bb0"
                     />
                 </Link>

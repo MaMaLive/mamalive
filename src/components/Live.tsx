@@ -25,7 +25,7 @@ export function Live() {
                 h='100%'
                 mx='auto'
                 align='center'
-                justify='space-between'
+                justify={isWiderVersion === true ? 'space-between' : 'center'}
                 px='6'
                 flexDirection={isWiderVersion === true ? 'row' : 'column'}
 
@@ -35,7 +35,7 @@ export function Live() {
                 >
                     <Heading
                         color="yellow.500"
-                        fontSize='67px'
+                        fontSize={[ "32px", "48px" , "64px"]}
                         letterSpacing='2px'
                         mb='1rem'
                     >
@@ -43,7 +43,7 @@ export function Live() {
                     </Heading>
 
                     <Heading
-                        fontSize='67px'
+                        fontSize={[ "32px", "48px" , "64px"]}
                         color="white"
                         letterSpacing='2px'
                         mb='1rem'
@@ -54,8 +54,9 @@ export function Live() {
                     </Heading>
 
                     <Text
-                        fontSize='3xl'
+                        fontSize={[ "16px", "24px" , "30px"]}
                         color="white"
+                        mb={isWiderVersion === true ? '0' : '2rem'}
 
                     >
                         De segunda a segunda
@@ -64,8 +65,8 @@ export function Live() {
                 </Box>
 
                     <Box 
-                        w={[ "384px", "512px" , "768px"]}
-                        h={[ "216px", "288px" , "432px"]}
+                        w={[ "256px", "384px", "512px" , "768px"]}
+                        h={[ "144px", "288px" , "432px"]}
                         position='relative'
                     >
                         <iframe

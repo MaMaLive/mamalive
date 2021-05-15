@@ -79,16 +79,16 @@ export function Contact() {
     return (
         <Box 
             w='100%'
-            h='90vh'
+            h='100%'
             bgImage="url('/images/bg.png')" 
             bgPosition="center"
             bgRepeat="no-repeat"
             bgSize='100% 100%'
             id='contact'
+            p={['2rem 0rem', '6rem 0rem']}
         >
             <Box
-                pt='6rem'
-                px='6'
+                px='2rem'
 
             >
 
@@ -105,7 +105,7 @@ export function Contact() {
                     
                     <Image
                         w="100%"
-                        h="100%"
+                        h={["100%"]}
                         objectFit="contain"
                         src="/images/FundoContato.png"
                         alt="Cabeçalho Contatos"
@@ -115,8 +115,8 @@ export function Contact() {
                     >
 
 
-                        <VStack spacing='8' mt='5rem'>
-                            <SimpleGrid minChildWidth='240px' spacing='8' w='100%'>
+                        <VStack spacing='4' mt={isWiderVersion === true ? '2rem' : '1rem'}>
+                            <SimpleGrid minChildWidth='200px' spacing='8' w='100%'>
                                 <Input 
                                     name="nameContact" 
                                     label="Nome" 
@@ -145,7 +145,7 @@ export function Contact() {
 
                             </SimpleGrid>
 
-                            <SimpleGrid minChildWidth='240px' spacing='8' w='100%'>
+                            <SimpleGrid minChildWidth='200px' spacing='8' w='100%'>
                                 <Input 
                                     name='email' 
                                     type='email' 

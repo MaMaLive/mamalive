@@ -16,7 +16,7 @@ export function Banner() {
             >
                 <Heading
                     color='white'
-                    fontSize={[ "32px", "48px" , "64px"]}
+                    fontSize={[ "24px","28px", "32px", "48px" , "64px"]}
                     textAlign='center'
                     m= '5rem 0'
                 >

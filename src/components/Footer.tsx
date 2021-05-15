@@ -19,7 +19,7 @@ export function Footer() {
                 
             >
                 <Box
-                    m='5rem 0 2rem 0'
+                    m='2rem 0 2rem 0'
                 >
                     <Link
                         href="https://www.facebook.com/MaMaLiveWebTv/"
@@ -84,7 +84,7 @@ export function Footer() {
                 <Text
                     color='white'
                     textAlign='center'
-                    mb='5rem'
+                    mb='2rem'
 
                 >
                     Desenvolvido com <strong style={{color: 'red'}}>❤</strong> por {" "}
