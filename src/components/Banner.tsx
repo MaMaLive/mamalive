@@ -10,11 +10,13 @@ export function Banner() {
                 maxWidth={1140}
                 mx='auto'
                 justify='center'
+                px='6'
+
                 
             >
                 <Heading
                     color='white'
-                    fontSize='67px'
+                    fontSize={[ "32px", "48px" , "64px"]}
                     textAlign='center'
                     m= '5rem 0'
                 >

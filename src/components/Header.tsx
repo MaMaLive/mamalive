@@ -1,7 +1,14 @@
-import {Flex, Image, Text, Box, Link} from '@chakra-ui/react';
+import {Flex, Image, Text, Box, Link, Icon, useBreakpointValue} from '@chakra-ui/react';
 import {Link as LinkS} from 'react-scroll'
+import { FiMenu } from 'react-icons/fi';
+
 
 export function Header() {
+    const isWiderVersion = useBreakpointValue({
+        base: false,
+        lg: true,
+    })
+
     return (
         <Flex
           as='header'
@@ -23,39 +30,45 @@ export function Header() {
                 <Image
                     w="150px"
                     h="100%"
-                    mr='4rem'
+                    mr={isWiderVersion && '4rem'}
                     objectFit="contain"
-                    src="/images/Logo.png"
+                    src="/images/cabecalhoMenor.png"
                     alt="MaMa Live" />
 
-                <Link as={LinkS} smooth={true} to='live' _focus={{border:'none'}}>
-                    <Text
-                        fontWeight="bold"
-                        color="gray.900"
-                        mr='4rem'
-                    >
-                        Inicio
-                    </Text>
-                </Link>
+                    { isWiderVersion && (
+                        <Flex>
+                            <Link as={LinkS} smooth={true} to='live' _focus={{border:'none'}}>
+                                <Text
+                                    fontWeight="bold"
+                                    color="gray.900"
+                                    mr='4rem'
+                                >
+                                    Inicio
+                                </Text>
+                            </Link>
 
-                <Link as={LinkS} smooth={true} to='programation' _focus={{border:'none'}}>
-                    <Text
-                        fontWeight="bold"
-                        color="gray.900"
-                        mr='4rem'
-                    >
-                        Programação
-                    </Text>
-                </Link>
+                            <Link as={LinkS} smooth={true} to='programation' _focus={{border:'none'}}>
+                                <Text
+                                    fontWeight="bold"
+                                    color="gray.900"
+                                    mr='4rem'
+                                >
+                                    Programação
+                                </Text>
+                            </Link>
 
-                <Link as={LinkS} smooth={true} to='contact' _focus={{border:'none'}}>
-                    <Text
-                        fontWeight="bold"
-                        color="gray.900"
-                    >
-                        Contato
-                    </Text>
-                </Link>
+                            <Link as={LinkS} smooth={true} to='contact' _focus={{border:'none'}}>
+                                <Text
+                                    fontWeight="bold"
+                                    color="gray.900"
+                                >
+                                    Contato
+                                </Text>
+                            </Link>
+                        </Flex>
+
+                    )}
+
 
               </Flex>
 
@@ -78,6 +91,16 @@ export function Header() {
                 </script>
             `
             }} />
+
+            { isWiderVersion || (
+                
+                <Icon
+                    as ={FiMenu}
+                    fontSize={32}
+
+                />
+            )}
+
 
         </Flex>
     )

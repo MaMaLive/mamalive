@@ -14,6 +14,8 @@ export function Footer() {
                 flexDirection='column'
                 justify='center'
                 align='center'
+                px='6'
+
                 
             >
                 <Box

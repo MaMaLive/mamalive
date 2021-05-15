@@ -4,7 +4,7 @@ import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import axios from 'axios'
 
-import {Flex, Box, Image, VStack, SimpleGrid, Button, Text, NumberInput, NumberInputField} from '@chakra-ui/react';
+import {Flex, Box, Image, VStack, SimpleGrid, Button, Text, useBreakpointValue, NumberInput, NumberInputField} from '@chakra-ui/react';
 import {Input} from '../components/Forms/Input'
 import {Textarea} from '../components/Forms/TextArea'
 
@@ -18,6 +18,11 @@ type ContactFormData = {
 
 
 export function Contact() {
+
+    const isWiderVersion = useBreakpointValue({
+        base: false,
+        lg: true,
+    })
 
     const [messagesent, setMessagesent] = useState('nulo')
 
@@ -82,22 +87,22 @@ export function Contact() {
             id='contact'
         >
             <Box
-                pt='8rem'
+                pt='6rem'
+                px='6'
+
             >
 
-                <Flex
+                <Box
                     maxWidth={855}
                     as='form'
                     w='100%'
                     mx='auto'
-                    align='center'
                     backgroundColor='white'
-                    flexDirection='column'
                     onSubmit={handleSubmit(handleParticipate)}
                     name='contact'
                     
                 >
-
+                    
                     <Image
                         w="100%"
                         h="100%"
@@ -105,90 +110,104 @@ export function Contact() {
                         src="/images/FundoContato.png"
                         alt="Cabeçalho Contatos"
                     />
+                    <Box
+                        px='16px'
+                    >
 
-                    <VStack spacing='8' mt='5rem'>
-                        <SimpleGrid minChildWidth='200px' spacing='8' w='100%'>
-                            <Input 
-                                name="nameContact" 
-                                label="Nome" 
-                                color="black"
-                                error={errors.nameContact}
-                                {...register('nameContact')}
-                                variant='flushed'
 
-                            />
-{/*                             <NumberInput
-                                min={0}
-                                inputMode='tel'
-                            >
-
-                                <NumberInputField name='phone'  label="Telefone" color="black"/>
-                            </NumberInput> */}
+                        <VStack spacing='8' mt='5rem'>
+                            <SimpleGrid minChildWidth='240px' spacing='8' w='100%'>
                                 <Input 
-                                    name='phone' 
-                                    label="Telefone" 
+                                    name="nameContact" 
+                                    label="Nome" 
                                     color="black"
-                                    error={errors.phone}
-                                    {...register('phone')}
+                                    error={errors.nameContact}
+                                    {...register('nameContact')}
+                                    variant='flushed'
+
+                                />
+    {/*                             <NumberInput
+                                    min={0}
+                                    inputMode='tel'
+                                >
+
+                                    <NumberInputField name='phone'  label="Telefone" color="black"/>
+                                </NumberInput> */}
+                                    <Input 
+                                        name='phone' 
+                                        label="Telefone" 
+                                        color="black"
+                                        error={errors.phone}
+                                        {...register('phone')}
+                                        variant='flushed'
+
+                                        />
+
+                            </SimpleGrid>
+
+                            <SimpleGrid minChildWidth='240px' spacing='8' w='100%'>
+                                <Input 
+                                    name='email' 
+                                    type='email' 
+                                    label="E-mail" 
+                                    color="black"
+                                    error={errors.email}
+                                    {...register('email')}
+                                    variant='flushed'
+                                    />
+                                <Input 
+                                    name="city" 
+                                    label="Cidade" 
+                                    color="black"
+                                    error={errors.city}
+                                    {...register('city')}
                                     variant='flushed'
 
                                     />
+                            </SimpleGrid>
+                        </VStack>
+                        
 
-                        </SimpleGrid>
+                        <Box
+                            mt='3rem'
+                            align='center'
+                        >
+                            
+                                <Textarea
+                                    maxWidth='100%'
+                                    name='messageContact'
+                                    color='gray.900'
+                                    background='gray.50'
+                                    placeholder='Envie-nos uma mensagem'
+                                    _placeholder={{color: 'gray.500'}}
+                                    error={errors.messageContact}
+                                    {...register('messageContact')}
 
-                        <SimpleGrid minChildWidth='200px' spacing='8' w='100%'>
-                            <Input 
-                                name='email' 
-                                type='email' 
-                                label="E-mail" 
-                                color="black"
-                                error={errors.email}
-                                {...register('email')}
-                                variant='flushed'
+
                                 />
-                            <Input 
-                                name="city" 
-                                label="Cidade" 
-                                color="black"
-                                error={errors.city}
-                                {...register('city')}
-                                variant='flushed'
+                                {messagesent === 'enviado' ? 
+                                    <Text>
+                                        Agradecemos seu contato!
+                                    </Text>
+                                : messagesent === 'erro' ? 
+                                    <Text>
+                                        Não conseguimos pegar seu contato, por favor tente novamente mais tarde.
+                                    </Text>
+                                : <></>
+                                }
+                            <Button 
+                                m='2rem 0 4rem 0' 
+                                type='submit'
+                                isLoading={formState.isSubmitting}
+                            >
+                                Enviar
+                            </Button>
 
-                                />
-                        </SimpleGrid>
+                        </Box>
 
-                        <Textarea
-                            w='45rem'
-                            name='messageContact'
-                            color='gray.900'
-                            background='gray.50'
-                            placeholder='Envie-nos uma mensagem'
-                            _placeholder={{color: 'gray.500'}}
-                            error={errors.messageContact}
-                            {...register('messageContact')}
-
-
-                        />
-                        {messagesent === 'enviado' ? 
-                            <Text>
-                                Agradecemos seu contato!
-                            </Text>
-                        : messagesent === 'erro' ? 
-                            <Text>
-                                Não conseguimos pegar seu contato, por favor tente novamente mais tarde.
-                            </Text>
-                        : <></>
-                        }
-                    </VStack>
-                     <Button 
-                        m='2rem 0 4rem 0' 
-                        type='submit'
-                        isLoading={formState.isSubmitting}
-                     >
-                         Enviar
-                     </Button>
+                    </Box>
                     
-                </Flex> 
+                </Box> 
             </Box>
         </Box>
     )

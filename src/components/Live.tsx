@@ -1,6 +1,12 @@
-import {Flex, Text, Box, Heading} from '@chakra-ui/react';
+import {Flex, Text, Box, Heading, useBreakpointValue} from '@chakra-ui/react';
 
 export function Live() {
+
+    const isWiderVersion = useBreakpointValue({
+        base: false,
+        lg: true,
+    })
+
     return (
 
         <Box 
@@ -11,6 +17,7 @@ export function Live() {
             bgRepeat="no-repeat"
             bgSize='100% 130%'
             id='live'
+
         >
             <Flex
                 maxWidth={1140}
@@ -19,16 +26,18 @@ export function Live() {
                 mx='auto'
                 align='center'
                 justify='space-between'
+                px='6'
+                flexDirection={isWiderVersion === true ? 'row' : 'column'}
+
             >
 
-                <Flex
-                flexDirection='column'
+                <Box
                 >
                     <Heading
                         color="yellow.500"
                         fontSize='67px'
-                        letterSpacing='3px'
-                        mb='2rem'
+                        letterSpacing='2px'
+                        mb='1rem'
                     >
                         AO VIVO
                     </Heading>
@@ -36,7 +45,7 @@ export function Live() {
                     <Heading
                         fontSize='67px'
                         color="white"
-                        letterSpacing='3px'
+                        letterSpacing='2px'
                         mb='1rem'
 
 
@@ -52,17 +61,22 @@ export function Live() {
                         De segunda a segunda
                         </Text>
 
-                </Flex>
-
-                <Box style={{width: '768px', height: '432px', position: 'relative'}}>
-                    <iframe
-                        style={{position: 'absolute', width: '100%', height: '100%', border: 'none'}}
-                        src="https://playerv.srvstm.com/video/mamalive/2/true/false/VlROU2RGWnFXWFZqTTBveVl6TlNkRXh0VG5aaVVUMDkrNQ==/16:9/"
-                        allowFullScreen
-                    >
-
-                    </iframe>
                 </Box>
+
+                    <Box 
+                        w={[ "384px", "512px" , "768px"]}
+                        h={[ "216px", "288px" , "432px"]}
+                        position='relative'
+                    >
+                        <iframe
+                            title="Ao vivo"
+                            style={{position: 'absolute', width: '100%', height: '100%', border: 'none'}}
+                            src="https://playerv.srvstm.com/video/mamalive/2/true/false/VlROU2RGWnFXWFZqTTBveVl6TlNkRXh0VG5aaVVUMDkrNQ==/16:9/"
+                            allowFullScreen
+                        >
+
+                        </iframe>
+                    </Box>
 
             </Flex>
 

@@ -4,7 +4,7 @@ import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import axios from 'axios'
 
-import {Flex, Text, Button, Icon, Box, Link} from '@chakra-ui/react';
+import {Flex, Text, Button, Icon, Box, Link, useBreakpointValue} from '@chakra-ui/react';
 import {Input} from '../components/Forms/Input'
 import {Textarea} from '../components/Forms/TextArea'
 
@@ -16,6 +16,11 @@ type ParticipateFormData = {
 }
 
 export function Participate() {
+
+    const isWiderVersion = useBreakpointValue({
+        base: false,
+        lg: true,
+    })
 
     const [messagesent, setMessagesent] = useState('nulo')
 
@@ -69,6 +74,9 @@ export function Participate() {
             mb='6rem'
             align='center'
             justify='space-between'
+            px='6'
+            flexDirection={isWiderVersion === true ? 'row' : 'column'}
+
         >
             <Flex 
                 as='form'
@@ -82,7 +90,7 @@ export function Participate() {
                     Participe de nossa programação.
                 </Text>
                 <Input
-                    w='30rem'
+                    maxWidth='30rem'
                     color='gray.900'
                     background='gray.50'
                     placeholder='Nome'
@@ -97,7 +105,7 @@ export function Participate() {
                 </Input>
                 <Textarea
                     mt='2rem'
-                    w='30rem'
+                    maxWidth='30rem'
                     color='gray.900'
                     background='gray.50'
                     name='message'
