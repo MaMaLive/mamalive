@@ -1,4 +1,4 @@
-import {Flex, Image, Text, Box, Link, Icon, useBreakpointValue, Button, VStack} from '@chakra-ui/react';
+import {Flex, Image, Text, Box, Link, Icon, useBreakpointValue, Button, VStack, HStack} from '@chakra-ui/react';
 import {Link as LinkS} from 'react-scroll'
 import { FiMenu } from 'react-icons/fi';
 import { useState } from 'react';
@@ -39,12 +39,11 @@ export function Header() {
                     alt="MaMa Live" />
 
                     { isWiderVersion && (
-                        <Flex>
+                        <HStack spacing='4rem'>
                             <Link as={LinkS} smooth={true} to='live' _focus={{border:'none'}}>
                                 <Text
                                     fontWeight="bold"
                                     color="gray.900"
-                                    mr='4rem'
                                 >
                                     Inicio
                                 </Text>
@@ -54,7 +53,6 @@ export function Header() {
                                 <Text
                                     fontWeight="bold"
                                     color="gray.900"
-                                    mr='4rem'
                                 >
                                     Programação
                                 </Text>
@@ -68,7 +66,7 @@ export function Header() {
                                     Contato
                                 </Text>
                             </Link>
-                        </Flex>
+                        </HStack>
 
                     )}
 

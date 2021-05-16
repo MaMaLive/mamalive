@@ -1,4 +1,4 @@
-import {Flex, Text, Box, Icon, Link} from '@chakra-ui/react';
+import {Flex, Text, Box, Icon, Link, HStack} from '@chakra-ui/react';
 import {RiFacebookCircleFill, RiTwitterFill, RiInstagramLine, RiYoutubeFill} from 'react-icons/ri'
 import {SiNextDotJs} from 'react-icons/si'
 export function Footer() {
@@ -18,19 +18,19 @@ export function Footer() {
 
                 
             >
-                <Box
+                <HStack spacing='3rem'
                     m='2rem 0 2rem 0'
                 >
                     <Link
                         href="https://www.facebook.com/MaMaLiveWebTv/"
                         isExternal
                         _focus={{border:'none'}}
-                    >
+                        >
                         <Icon
                             as={RiFacebookCircleFill}
                             fontSize='30px' 
                             color="white"
-                            mr='3rem'
+                            _hover={{color:'blue.500'}}
                         />
                     </Link>
                         
@@ -43,7 +43,7 @@ export function Footer() {
                             as={RiTwitterFill}
                             fontSize='30px' 
                             color="white"
-                            mr='3rem'
+                            _hover={{color:'blue.500'}}
                         />
                     </Link>
 
@@ -56,7 +56,7 @@ export function Footer() {
                             as={RiInstagramLine}
                             fontSize='30px' 
                             color="white"
-                            mr='3rem'
+                            _hover={{color:'blue.500'}}
                         />
                     </Link>
 
@@ -69,9 +69,10 @@ export function Footer() {
                             as={RiYoutubeFill}
                             fontSize='30px' 
                             color="white"
+                            _hover={{color:'blue.500'}}
                         />
                     </Link>
-                </Box>
+                </HStack>
 
                 <Text
                     color='white'
@@ -107,6 +108,7 @@ export function Footer() {
                             as={SiNextDotJs}
                             color="white"
                             fontSize='25px' 
+                            _hover={{color:'gray.500'}}
                         />
                     </Link>
                 </Text>
