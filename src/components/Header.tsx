@@ -105,6 +105,7 @@ export function Header() {
                     top= '0'
                     left='0'
                     onClick={() => setMenuIsOpen(false)}
+                    overflow='hidden'
                 >
 
                         <Box
