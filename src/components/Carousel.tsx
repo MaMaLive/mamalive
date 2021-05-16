@@ -24,7 +24,7 @@ export function Carousel(){
               naturalSlideHeight={125}
               totalSlides={5}
               infinite
-              interval={1000}
+              interval={5000}
               isPlaying
             > 
               <Slider style={{ maxHeight:'31rem', cursor: 'grab'}}>
