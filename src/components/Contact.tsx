@@ -3,6 +3,8 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import axios from 'axios'
+import { format } from 'date-fns';
+
 
 import {Flex, Box, Image, VStack, SimpleGrid, Button, Text, useBreakpointValue, NumberInput, NumberInputField} from '@chakra-ui/react';
 import {Input} from '../components/Forms/Input'
@@ -48,6 +50,10 @@ export function Contact() {
         setMessagesent('nulo')
         await new Promise(resolve => setTimeout(resolve, 2000))
         // console.log(data)
+        const date = new Date(Date.now())
+        // console.log(date)
+        const parsedDate = format(date, 'dd-MM-yyyy')
+        // console.log(parsedDate)
 
         try {
             
@@ -57,6 +63,7 @@ export function Contact() {
                 email: data.email,
                 phone: data.phone,
                 city: data.city,
+                date: parsedDate,
 
             }).then(response => {
                 if(response.status !== 200) {

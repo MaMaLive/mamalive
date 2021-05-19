@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import axios from 'axios'
+import { format } from 'date-fns';
 
 import {Flex, Text, Button, Icon, Box, Link, useBreakpointValue} from '@chakra-ui/react';
 import {Input} from '../components/Forms/Input'
@@ -40,13 +41,19 @@ export function Participate() {
         // event.preventDefault()
         await new Promise(resolve => setTimeout(resolve, 2000))
         // console.log(data)
+        const date = new Date(Date.now())
+        // console.log(date)
+        const parsedDate = format(date, 'dd-MM-yyyy')
+        // console.log(parsedDate)
+
 
 
         try {
             
             axios.post('https://sheet.best/api/sheets/242c88f2-db88-49e3-9bfd-55c2a51a59ff', {
                 name: data.name,
-                message: data.message
+                message: data.message,
+                date: parsedDate,
             }).then(response => {
                 if(response.status !== 200) {
                     setMessagesent('erro')

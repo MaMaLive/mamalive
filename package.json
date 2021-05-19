@@ -8,13 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "-": "^0.0.1",
     "@chakra-ui/core": "^0.8.0",
     "@chakra-ui/react": "^1.6.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
     "@hookform/resolvers": "^2.4.0",
+    "@types/date-fns": "^2.6.0",
     "@types/react-scroll": "^1.8.2",
+    "D": "^1.0.0",
     "axios": "^0.21.1",
+    "date-fns": "^2.21.3",
     "framer-motion": "^4.1.11",
     "next": "10.2.0",
     "pure-react-carousel": "^1.27.6",
